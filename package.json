@@ -5,7 +5,8 @@
   "scripts": {
     "lint": "eslint .",
     "start": "node .",
-    "posttest": "npm run lint && nsp check"
+    "posttest": "npm run lint && nsp check",
+    "setup": "npm install && cd webapp && npm install"
   },
   "dependencies": {
     "@mean-expert/loopback-component-realtime": "^1.0.0-beta.8",
