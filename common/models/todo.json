@@ -5,11 +5,7 @@
   "options": {
     "validateUpsert": true
   },
-  "properties": {
-    "text": {
-      "type": "string"
-    }
-  },
+  "properties": {},
   "validations": [],
   "relations": {},
   "acls": [],
