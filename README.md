@@ -6,8 +6,9 @@ The example in this repository was created using the [FireLoop CLI](http://firel
 #### How to locally setup this example
 
 ````sh
-$ npm install -g @mean-expert/fireloop`
+$ npm install -g @mean-expert/fireloop
 $ git clone git@github.com:mean-expert-official/fireloop-todo-example.git
+$ cd fireloop-todo-example && npm install
 ````
 #### How to locally serve this example
 Use the space key to select both; Server and Client applications to be served.
