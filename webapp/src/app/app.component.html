@@ -1,0 +1,14 @@
+<h1>
+  {{title}}
+</h1>
+<form (submit)="create()">
+  <input name="todo" [(ngModel)]="todo.text" placeholder="Add Todo" />
+  <button>Add Todo</button>
+</form>
+<ul>
+  <li *ngFor="let _todo of todoRef.on('change') | async">
+    <input name="_todo.id" [(ngModel)]="_todo.text" />
+    <button (click)="update(_todo)">Update</button>
+    <button (click)="remove(_todo)">Remove</button>
+  </li>
+</ul>
