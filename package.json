@@ -11,7 +11,7 @@
   "dependencies": {
     "@mean-expert/loopback-component-realtime": "^1.0.0-beta.8",
     "@mean-expert/loopback-stats-mixin": "^1.2.0",
-    "@mean-expert/model": "^1.0.3",
+    "@mean-expert/model": "^1.0.4",
     "@mean-expert/model-register": "^1.0.4",
     "compression": "^1.0.3",
     "cors": "^2.5.2",
