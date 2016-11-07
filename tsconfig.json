@@ -6,6 +6,6 @@
         "preserveConstEnums": true,
         "sourceMap": true,
         "experimentalDecorators": true,
-        "moduleResolution": "classic"
+        "moduleResolution": "node"
     }
 }

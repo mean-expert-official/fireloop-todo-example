@@ -1,4 +1,4 @@
-import { Model } from '../../node_modules/@mean-expert/model/index';
+import { Model } from '@mean-expert/model';
 /**
  * @module Todo
  * @description
@@ -17,7 +17,7 @@ import { Model } from '../../node_modules/@mean-expert/model/index';
   }
 })
 
-class Todo {
+export class Todo {
   /**
    * @method constructor
    * @description
