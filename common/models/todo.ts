@@ -1,4 +1,4 @@
-import { Model } from '@mean-expert/model/index';
+import { Model } from '../../node_modules/@mean-expert/model/index';
 /**
  * @module Todo
  * @description
