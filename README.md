@@ -33,4 +33,6 @@ $ fireloop serve
 
 Open your browser in [127.0.0.1:4200](http://127.0.0.1:4200) and you should see the following result:
 
-![](https://storage.googleapis.com/mean-expert-images/fireloop-todo-app.gif)
+[Click here if gif does't load -sigh- [Shame on you @GitHub]](https://goo.gl/YRiKnz)
+
+![FireLoop Stats](https://goo.gl/YRiKnz)

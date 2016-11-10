@@ -1,6 +1,6 @@
 {
   "generator-fireloop": {
-    "version": "1.0.0-alpha.26",
+    "version": "1.0.0-alpha.34",
     "clients": {
       "webapp": {
         "path": "./webapp",

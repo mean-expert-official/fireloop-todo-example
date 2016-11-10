@@ -2,7 +2,8 @@
   {{title}}
 </h1>
 <form (submit)="create()">
-  <input name="todo" [(ngModel)]="todo.text" placeholder="Add Todo" />
+  <input name="todo" type="text" [(ngModel)]="todo.text" placeholder="Add Todo" />
+  <input name="todo" type="date" [(ngModel)]="todo.dueAt" placeholder="Due Date" />
   <button>Add Todo</button>
 </form>
 <ul>
@@ -12,3 +13,16 @@
     <button (click)="remove(_todo)">Remove</button>
   </li>
 </ul>
+<div class="row">
+  <div class="col-md-6">
+    <div style="display: block;">
+    <canvas *ngIf="lineChartData.length > 0" baseChart width="400" height="400"
+                [datasets]="lineChartData"
+                [labels]="lineChartLabels"
+                [options]="lineChartOptions"
+                [colors]="lineChartColors"
+                [legend]="lineChartLegend"
+                [chartType]="lineChartType"></canvas>
+    </div>
+  </div>
+</div>

@@ -46,7 +46,7 @@ export class TodoApi extends BaseLoopBackApi {
    * This usually means the response is a `Todo` object.)
    * </em>
    */
-  public create(data: any = undefined): Observable<Todo> {
+  public create(data: any = {}): Observable<Todo> {
     let method: string = "POST";
     let url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/Todos";
@@ -75,7 +75,7 @@ export class TodoApi extends BaseLoopBackApi {
    * This usually means the response is a `Todo` object.)
    * </em>
    */
-  public upsert(data: any = undefined): Observable<Todo> {
+  public upsert(data: any = {}): Observable<Todo> {
     let method: string = "PUT";
     let url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/Todos";
@@ -104,7 +104,7 @@ export class TodoApi extends BaseLoopBackApi {
    * This usually means the response is a `Todo` object.)
    * </em>
    */
-  public replaceOrCreate(data: any = undefined): Observable<any> {
+  public replaceOrCreate(data: any = {}): Observable<any> {
     let method: string = "POST";
     let url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/Todos/replaceOrCreate";
@@ -135,7 +135,7 @@ export class TodoApi extends BaseLoopBackApi {
    * This usually means the response is a `Todo` object.)
    * </em>
    */
-  public upsertWithWhere(where: any = undefined, data: any = undefined): Observable<Todo> {
+  public upsertWithWhere(where: any = {}, data: any = {}): Observable<Todo> {
     let method: string = "POST";
     let url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/Todos/upsertWithWhere";
@@ -191,7 +191,7 @@ export class TodoApi extends BaseLoopBackApi {
    * This usually means the response is a `Todo` object.)
    * </em>
    */
-  public findById(id: any, filter: LoopBackFilter = undefined): Observable<Todo> {
+  public findById(id: any, filter: LoopBackFilter = {}): Observable<Todo> {
     let method: string = "GET";
     let url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/Todos/:id";
@@ -223,7 +223,7 @@ export class TodoApi extends BaseLoopBackApi {
    * This usually means the response is a `Todo` object.)
    * </em>
    */
-  public replaceById(id: any, data: any = undefined): Observable<any> {
+  public replaceById(id: any, data: any = {}): Observable<any> {
     let method: string = "POST";
     let url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/Todos/:id/replace";
@@ -252,7 +252,7 @@ export class TodoApi extends BaseLoopBackApi {
    * This usually means the response is a `Todo` object.)
    * </em>
    */
-  public find(filter: LoopBackFilter = undefined): Observable<Array<Todo>> {
+  public find(filter: LoopBackFilter = {}): Observable<Array<Todo>> {
     let method: string = "GET";
     let url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/Todos";
@@ -280,7 +280,7 @@ export class TodoApi extends BaseLoopBackApi {
    * This usually means the response is a `Todo` object.)
    * </em>
    */
-  public findOne(filter: LoopBackFilter = undefined): Observable<Todo> {
+  public findOne(filter: LoopBackFilter = {}): Observable<Todo> {
     let method: string = "GET";
     let url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/Todos/findOne";
@@ -307,7 +307,7 @@ export class TodoApi extends BaseLoopBackApi {
    *
    * Information related to the outcome of the operation
    */
-  public updateAll(where: any = undefined, data: any = undefined): Observable<any> {
+  public updateAll(where: any = {}, data: any = {}): Observable<any> {
     let method: string = "POST";
     let url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/Todos/update";
@@ -361,7 +361,7 @@ export class TodoApi extends BaseLoopBackApi {
    *
    *  - `count` – `{number}` - 
    */
-  public count(where: any = undefined): Observable<any> {
+  public count(where: any = {}): Observable<any> {
     let method: string = "GET";
     let url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/Todos/count";
@@ -391,7 +391,7 @@ export class TodoApi extends BaseLoopBackApi {
    * This usually means the response is a `Todo` object.)
    * </em>
    */
-  public updateAttributes(id: any, data: any = undefined): Observable<any> {
+  public updateAttributes(id: any, data: any = {}): Observable<any> {
     let method: string = "PUT";
     let url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/Todos/:id";
@@ -440,23 +440,19 @@ export class TodoApi extends BaseLoopBackApi {
          * (The remote method definition does not provide any description.)
          * </em>
    *
-   * @param string id 
-   *
    * @returns object An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
    * Data properties:
    *
-   *  - `result` – `{object}` - 
+   *  - `result` – `{any}` - 
    */
-  public myRemote(id: any): Observable<any> {
+  public myRemote(): Observable<any> {
     let method: string = "GET";
     let url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Todos/:id/my-remote";
-    let routeParams: any = {
-      id: id
-    };
+    "/Todos/my-remote";
+    let routeParams: any = {};
     let postBody: any = {};
     let urlParams: any = {};
     let result = this.request(method, url, routeParams, urlParams, postBody);
@@ -483,7 +479,7 @@ export class TodoApi extends BaseLoopBackApi {
    * This usually means the response is a `Todo` object.)
    * </em>
    */
-  public stats(range: any, custom: any = undefined, where: any = undefined, groupBy: any = undefined): Observable<any> {
+  public stats(range: any, custom: any = {}, where: any = {}, groupBy: any = {}): Observable<any> {
     let method: string = "GET";
     let url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/Todos/stats";
@@ -514,7 +510,7 @@ export class TodoApi extends BaseLoopBackApi {
    * This usually means the response is a `Todo` object.)
    * </em>
    */
-  public createMany(data: Array<any> = undefined): Observable<Array<Todo>> {
+  public createMany(data: Array<any> = []): Observable<Array<Todo>> {
     let method: string = "POST";
     let url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/Todos";

@@ -5,7 +5,15 @@
   "options": {
     "validateUpsert": true
   },
-  "properties": {},
+  "properties": {
+    "text": {
+      "type": "string"
+    },
+    "dueAt": {
+      "type": "date",
+      "required": true
+    }
+  },
   "validations": [],
   "relations": {},
   "acls": [],
@@ -19,7 +27,7 @@
         "description": "Statistical information for Todo registers.",
         "type": "model",
         "count": {
-          "on": "createdAt",
+          "on": "dueAt",
           "by": "index"
         }
       }

@@ -3,6 +3,7 @@
 declare var Object: any;
 export interface TodoInterface {
   text?: string;
+  dueAt: Date;
   id?: number;
   createdAt: Date;
   updatedAt: Date;
@@ -10,6 +11,7 @@ export interface TodoInterface {
 
 export class Todo implements TodoInterface {
   text: string;
+  dueAt: Date;
   id: number;
   createdAt: Date;
   updatedAt: Date;
