@@ -3,6 +3,8 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
+import { ChartsModule } from 'ng2-charts/ng2-charts';
+import { SDKModule } from './shared/sdk/index';
 
 describe('App: Webapp', () => {
   beforeEach(() => {
@@ -10,7 +12,11 @@ describe('App: Webapp', () => {
       declarations: [
         AppComponent
       ],
-      imports: [ FormsModule ]
+      imports: [ 
+      FormsModule,
+      SDKModule.forRoot(),
+      ChartsModule
+       ]
     });
   });
 
