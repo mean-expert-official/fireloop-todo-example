@@ -1,41 +1,50 @@
 /* tslint:disable:no-unused-variable */
 
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { SDKModule } from './shared/sdk/index';
 
 describe('App: Webapp', () => {
+  let fixture: ComponentFixture<AppComponent>;
+
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent
       ],
-      imports: [ 
+      imports: [
       FormsModule,
       SDKModule.forRoot(),
       ChartsModule
        ]
     });
+
+    fixture = TestBed.createComponent(AppComponent);
   });
 
   it('should create the app', async(() => {
-    let fixture = TestBed.createComponent(AppComponent);
     let app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));
 
-  it(`should have as title 'app works!'`, async(() => {
-    let fixture = TestBed.createComponent(AppComponent);
-    let app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('app works!');
-  }));
+  it(`should have as title 'app works!'`,
+    (done) => {
+      fixture.whenStable().then(() => {
+        let app = fixture.debugElement.componentInstance;
+        expect(app.title).toEqual('Todo app works!');
+        done();
+      })
+    });
 
-  it('should render title in a h1 tag', async(() => {
-    let fixture = TestBed.createComponent(AppComponent);
+
+  it('should render title in a h1 tag',  (done) => {
+    fixture.whenStable().then(() => {
     fixture.detectChanges();
     let compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('app works!');
-  }));
+    expect(compiled.querySelector('h1').textContent).toContain('Todo app works!');
+      done();
+    });
+  });
 });
