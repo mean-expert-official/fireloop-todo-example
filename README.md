@@ -28,15 +28,15 @@ Use the space key to select both; Server and Client applications to be served.
 $ cd fireloop-todo-example
 $ fireloop serve
 
-     _-----_     
+     _-----_
     |       |    ╭──────────────────────────╮
     |--(o)--|    │      Let's serve an      │
    `---------´   │       application!       │
     ( _´U`_ )    ╰──────────────────────────╯
     /___A___\   /
-     |  ~  |     
-   __'.___.'__   
- ´   `  |° ´ Y ` 
+     |  ~  |
+   __'.___.'__
+ ´   `  |° ´ Y `
 
 ? What application do you want to serve? (Press <space> to select, <a> to toggle all, <i> to inverse selection)
 ❯◯ webapp
@@ -47,4 +47,15 @@ Open your browser in [127.0.0.1:4200](http://127.0.0.1:4200) and you should see 
 
 [Click here if gif does't load -sigh- [Shame on you @GitHub]](https://goo.gl/YRiKnz)
 
+
+
+
 ![FireLoop Stats](https://goo.gl/YRiKnz)
+
+
+## IDE
+
+### Intellij IDEA
+
+to import this project in [Idea](https://www.jetbrains.com/idea/) you need to do it [before the first `npm install`](https://github.com/mean-expert-official/fireloop-todo-example/issues/5).
+
