@@ -3,14 +3,26 @@ FireLoop Todo Example App
 
 The example in this repository was created using the [FireLoop CLI](http://fireloop.io) tool. So you will need to install it before cloning this repo.
 
-#### How to locally setup this example
+## How to locally setup this example
+
+### With Npm
 
 ````sh
 $ npm install -g @mean-expert/fireloop
 $ git clone git@github.com:mean-expert-official/fireloop-todo-example.git
 $ cd fireloop-todo-example && npm run setup
 ````
-#### How to locally serve this example
+
+### With Yarn
+
+````sh
+$ yarn global add @mean-expert/fireloop
+$ git clone git@github.com:mean-expert-official/fireloop-todo-example.git
+$ cd fireloop-todo-example && yarn ysetup
+````
+
+
+## How to locally serve this example
 Use the space key to select both; Server and Client applications to be served.
 ````sh
 $ cd fireloop-todo-example
