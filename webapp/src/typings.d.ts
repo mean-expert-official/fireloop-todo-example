@@ -3,3 +3,7 @@
 
 declare var System: any;
 declare var require: any;
+declare var describe: any;
+declare var expect: any;
+declare var beforeEach: any;
+declare var it: any;
