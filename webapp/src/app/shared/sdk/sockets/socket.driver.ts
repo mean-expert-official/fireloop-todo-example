@@ -1,7 +1,11 @@
-/* tslint:disable */
-import * as io from 'socket.io-client';
+/**
+ * @module SocketDriver
+ * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
+ * @license MIT
+ * @description
+ * The SocketDriver class is used for dependency injection swapping.
+ * It will be provided using factory method from different sources.
+ **/
 export class SocketDriver {
-  static connect(url: any, options: any) {
-    return io(url, options);
-  }
+  connect(url: any, options: any) {}
 }

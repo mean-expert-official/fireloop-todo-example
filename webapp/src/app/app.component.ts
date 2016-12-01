@@ -15,6 +15,7 @@ export class AppComponent {
 
   private title   : string = 'Todo app works!';
   private todo    : Todo   = new Todo();
+  private todos   : Todo[] = new Array<Todo>();
   private todoRef : FireLoopRef<Todo>;
   private lineChartData:Array<any> = [];
   private lineChartLabels:Array<any> = [];
@@ -37,6 +38,7 @@ export class AppComponent {
 
   constructor(private rt: RealTime) {
     this.todoRef = this.rt.FireLoop.ref<Todo>(Todo);
+    this.todoRef.on('change').subscribe((todos: Todo[]) => this.todos = todos);
     this.todoRef.stats().subscribe((stats: any) => {
       this.lineChartLabels = new Array();
       this.lineChartData   = new Array();
