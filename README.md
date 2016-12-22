@@ -8,17 +8,17 @@ The example in this repository was created using the [FireLoop CLI](http://firel
 ### With Npm
 
 ````sh
-$ npm install -g @mean-expert/fireloop
+$ npm install -g @mean-expert/fireloop@1.0.0-beta.1.3
 $ git clone git@github.com:mean-expert-official/fireloop-todo-example.git
-$ cd fireloop-todo-example && npm run setup
+$ cd fireloop-todo-example/fireloop && npm run setup
 ````
 
 ### With Yarn
 
 ````sh
-$ yarn global add @mean-expert/fireloop
+$ yarn global add @mean-expert/fireloop@1.0.0-beta.1.3
 $ git clone git@github.com:mean-expert-official/fireloop-todo-example.git
-$ cd fireloop-todo-example && yarn ysetup
+$ cd fireloop-todo-example/fireloop && yarn ysetup
 ````
 
 

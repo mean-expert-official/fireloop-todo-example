@@ -1,12 +1,11 @@
 {
   "generator-fireloop": {
-    "version": "1.0.0-alpha.34",
+    "version": "1.0.0-beta.1.3",
     "clients": {
       "webapp": {
         "path": "./webapp",
-        "type": "web"
+        "type": "ng2web"
       }
     }
-  },
-  "generator-loopback": {}
+  }
 }

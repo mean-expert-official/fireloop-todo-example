@@ -6,7 +6,7 @@
   <input name="todo" type="date" [(ngModel)]="todo.dueAt" placeholder="Due Date" />
   <button>Add Todo</button>
 </form>
-<ul>
+<ul *ngIf="todoRef">
   <li *ngFor="let _todo of todos">
     <input name="_todo.id" [(ngModel)]="_todo.text" />
     <button (click)="update(_todo)">Update</button>

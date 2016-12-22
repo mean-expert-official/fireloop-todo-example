@@ -2,11 +2,11 @@
 
 declare var Object: any;
 export interface TodoInterface {
-  text?: string;
+  text: string;
   dueAt: Date;
   id?: number;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt?: Date;
+  updatedAt?: Date;
 }
 
 export class Todo implements TodoInterface {
@@ -44,7 +44,7 @@ export class Todo implements TodoInterface {
   public static getModelDefinition() {
     return {
       name: 'Todo',
-      plural: 'Todos',
+      plural: 'todos',
       properties: {
         text: {
           name: 'text',

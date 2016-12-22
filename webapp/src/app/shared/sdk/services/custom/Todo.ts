@@ -5,7 +5,6 @@ import { SDKModels } from './SDKModels';
 import { BaseLoopBackApi } from '../core/base.service';
 import { LoopBackConfig } from '../../lb.config';
 import { LoopBackAuth } from '../core/auth.service';
-import { SocketConnections } from '../../sockets/socket.connections';
 import { LoopBackFilter,  } from '../../models/BaseModels';
 import { JSONSearchParams } from '../core/search.params';
 import { ErrorHandler } from '../core/error.service';
@@ -13,6 +12,7 @@ import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import { Todo } from '../../models/Todo';
+import { SocketConnections } from '../../sockets/socket.connections';
 
 
 /**
@@ -48,7 +48,7 @@ export class TodoApi extends BaseLoopBackApi {
   public myRemote(): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Todos/my-remote";
+    "/todos/my-remote";
     let _routeParams: any = {};
     let _postBody: any = {};
     let _urlParams: any = {};
@@ -79,7 +79,7 @@ export class TodoApi extends BaseLoopBackApi {
   public stats(range: any, custom: any = {}, where: any = {}, groupBy: any = {}): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Todos/stats";
+    "/todos/stats";
     let _routeParams: any = {};
     let _postBody: any = {};
     let _urlParams: any = {};

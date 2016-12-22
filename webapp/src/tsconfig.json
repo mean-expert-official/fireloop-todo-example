@@ -3,6 +3,7 @@
     "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "noImplicitAny": true,
     "lib": ["es6", "dom"],
     "mapRoot": "./",
     "module": "es6",
@@ -14,7 +15,11 @@
       "../node_modules/@types"
     ],
     "types": [
-      "socket.io-client"
+      "socket.io-client",
+      "express"
     ]
-  }
+  },
+  "exclude": [
+    "node_modules"
+  ]
 }

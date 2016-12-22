@@ -6,20 +6,20 @@ import { JSONSearchParams } from './search.params';
 import { ErrorHandler } from './error.service';
 import { LoopBackAuth } from './auth.service';
 import { LoopBackConfig } from '../../lb.config';
-import { LoopBackFilter, SDKToken, AccessToken } from '../../models/BaseModels';
+import { LoopBackFilter, AccessToken } from '../../models/BaseModels';
 import { SDKModels } from '../custom/SDKModels';
 import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject';
 import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
-import { Subject } from 'rxjs/Subject';
 import { SocketConnections } from '../../sockets/socket.connections';
 // Making Sure EventSource Type is available to avoid compilation issues.
 declare var EventSource: any;
 /**
 * @module BaseLoopBackApi
+* @author Jonathan Casarrubias <@johncasarrubias> <github:jonathan-casarrubias>
 * @author Nikolay Matiushenkov <https://github.com/mnvx>
-* @contributor Jonathan Casarrubias <@johncasarrubias> <github:jonathan-casarrubias>
 * @license MIT
 * @description
 * Abstract class that will be implemented in every custom service automatically built
@@ -107,9 +107,8 @@ export abstract class BaseLoopBackApi {
       body = postBody;
     }
     // Separate filter object from url params
-    let filter: string = '';
     if (urlParams.filter) {
-      filter = `?filter=${ encodeURI(JSON.stringify(urlParams.filter))}`;
+      headers.append('filter', JSON.stringify(urlParams.filter));
       delete urlParams.filter;
     }
 
@@ -117,14 +116,14 @@ export abstract class BaseLoopBackApi {
     let request: Request = new Request({
       headers : headers,
       method  : method,
-      url     : `${requestUrl}${filter}`,
+      url     : requestUrl,
       search  : Object.keys(urlParams).length > 0
               ? this.searchParams.getURLSearchParams() : null,
       body    : body ? JSON.stringify(body) : undefined
     });
     return this.http.request(request)
       .map((res: any) => (res.text() != "" ? res.json() : {}))
-      .catch(this.errorHandler.handleError);
+      .catch((e) => this.errorHandler.handleError(e));
   }
   /**
    * @method create
@@ -199,7 +198,7 @@ export abstract class BaseLoopBackApi {
       LoopBackConfig.getPath(),
       LoopBackConfig.getApiVersion(),
       this.model.getModelDefinition().plural,
-      'exists'
+      ':id/exists'
     ].join('/'), { id }, undefined, undefined);
   }
   /**
@@ -341,7 +340,7 @@ export abstract class BaseLoopBackApi {
       LoopBackConfig.getApiVersion(),
       this.model.getModelDefinition().plural,
       ':id', 'replace'
-    ].join('/'), undefined, undefined, { data }).map((data: T) => this.model.factory(data));
+    ].join('/'), { id }, undefined, { data }).map((data: T) => this.model.factory(data));
   }
   /**
    * @method createChangeStream
